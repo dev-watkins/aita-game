@@ -1,0 +1,47 @@
+.main {
+  padding: 0;
+  margin: 35px auto;
+  width: 85%;
+}
+
+.main h1 {
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+.options {
+  display: flex;
+  justify-content: center;  
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.options button {
+  margin: 10px 35px;
+}
+
+.badPost{
+  display: flex;
+  justify-content: center; 
+  flex-wrap: wrap;
+}
+
+.answer{
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.correct {
+  color: #4ECDC4;
+}
+.wrong {
+  color: #E75A7C;
+}
+
+@media only screen and (max-width: 899px) {
+  .main {
+    width: 90%;
+  }
+}

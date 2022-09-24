@@ -1,26 +1,154 @@
-html,
-body {
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+html,
+body {  
+  font-family: 'Rubik', sans-serif;
+  font-size: 18px;
+  color: #F2F5EA;
+  background: #2C363F;
+  padding: 25px 50px;
+  min-height: calc(100vh - 50px);
+}
+
+nav {
+  margin-bottom: 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+  color:#4ECDC4;
 }
 
-* {
-  box-sizing: border-box;
+p {
+  margin-bottom: 1rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+h2{
+  margin-bottom: 25px;
+}
+
+main {
+  padding: 35px 0;
+}
+
+.important {
+  color: #E75A7C;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.logout {
+  cursor: pointer;
+}
+
+button, .btn {
+  padding: 10px 30px;
+  font-size: 20px;
+  font-family: inherit;
+  border-style: solid;
+  cursor: pointer;
+  display: inline-block;
+  transition: transform .5s;
+}
+
+button:hover, .btn:hover {
+  transform: scale(1.02);
+}
+
+.solid {
+  border-radius: 10px;
+  border-width: 3px;
+}
+
+.solid.primary {
+  background-color: #E75A7C;
+  border-color: #E75A7C;
+  color:#F2F5EA;
+  font-weight: 600;
+}
+
+.solid.secondary {
+  background-color: #4ECDC4;
+  border-color: #4ECDC4;
+  color:#F2F5EA;
+  font-weight: 600;
+}
+
+.outline{
+  border-radius: 50px;
+  border-width: 3px;
+  background: transparent;
+}
+
+.outline.primary {
+  color: #E75A7C;
+  border-color: #E75A7C;
+}
+.outline.secondary {
+  color: #4ECDC4;
+  border-color: #4ECDC4;
+}
+.outline.tertiary {
+  color: #FF6B6B;
+  border-color: #FF6B6B;
+}
+.outline.quaternary {
+  color: #489FB5;
+  border-color: #489FB5;
+}
+
+.home-link{
+  color:#F2F5EA;
+}
+
+.nav-right-side {
+  display: flex;
+}
+
+.score{
+  text-align: center;
+  margin-right: 35px;
+}
+
+.peach {
+  position: fixed;
+  bottom: 15px;
+  right:15px;
+  font-size: 30px;
+}
+
+@media only screen and (max-width: 899px) {
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-items: stretch;
   }
-  body {
-    color: white;
-    background: black;
+  .nav-right-side{
+    margin-top: 1rem;
+    justify-content: center; 
+    flex-wrap: wrap;   
+  }
+  .nav-right-side>div{
+    margin: 10px 15px;
+    text-align: center;
+  }
+  .home-link {
+    text-align: center;
+  }
+  html,
+  body{
+    padding: 25px 0;
   }
 }
