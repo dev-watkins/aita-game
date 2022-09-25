@@ -12,7 +12,7 @@ export const AnswerPanel: FC<{post:IPost, next: ()=>{}}> = ({post, next}) => {
   const answer = async (e: MouseEvent) =>{
     const target = e.target as HTMLButtonElement;
     if(session) {
-      const res = await fetch(`${process.env.HOST}/api/answer`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_HOST || 'http://localhost:3000'}/api/answer`, {
         method: 'POST',
         headers:{
           'Content-Type': 'application/json'
