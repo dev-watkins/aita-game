@@ -6,13 +6,18 @@ import { sessionValidator } from '../../lib/api/validators/session';
 import { ScoreHandler } from '../../lib/api/handlers/scoreHandler';
 
 export default async function score(req: NextApiRequest, res: NextApiResponse) {
-  const client = new PrismaClient();
-  const handler = new ScoreHandler(
-    [methodValidator('GET'), sessionValidator(res, authOptions)],
-    req,
-    res,
-    client
-  );
+  try {
+    const client = new PrismaClient();
+    const handler = new ScoreHandler(
+      [methodValidator('GET'), sessionValidator(res, authOptions)],
+      req,
+      res,
+      client
+    );
 
-  return handler.execute();
+    return handler.execute();
+  } catch (e) {
+    console.log(e);
+    return res.status(500).send('');
+  }
 }
