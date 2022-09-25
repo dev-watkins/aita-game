@@ -25,7 +25,9 @@ export class AnswerHandler extends BaseHandler {
     await am.create(user.id, judgment, post);
 
     const score = await am.getScore(user.id);
+    const count = await am.count(user.id);
+    const winRatio = Math.ceil((score / count) * 100) / 100;
 
-    return this._res.status(200).json({ score });
+    return this._res.status(200).json({ score, winRatio });
   }
 }
